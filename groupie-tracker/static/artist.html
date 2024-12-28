@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie Tracker</title>
+    <link rel="stylesheet" href="/static/artist.css">
+    <link rel="icon" href="/static/favicon.ico">
+</head>
+<body>
+    <div id="artist-container">
+        <div class="artist-card" data-id="{{.ID}}">
+            <img src="{{.Image}}" alt="{{.Name}}">
+            <h1>{{.Name}}</h1> 
+        
+            <p><strong>Members:</strong><br> {{range .Members}}{{.}}<br>{{end}}</p>
+            <p><strong>Creation Date:</strong><br> {{.CreationDate}}</p>
+            <p><strong>First Album:</strong><br> {{.FirstAlbum}}</p>
+            <p><strong>Performance Locations:</strong><br> {{range .Locations}}{{.}}, {{end}}</p>
+            <p><strong>Performance Dates:</strong><br> {{range .Dates}}{{.}}, {{end}}</p>
+            <p><strong>Previous Performances:</strong><br> {{range .Relations}}{{.}}, {{end}}</p>
+        
+            <a href="/" style="
+    display: inline-block; 
+    padding: 10px 20px; 
+    background-color: #b83dff;
+    color: white; 
+    font-weight: bold; 
+    text-align: center; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    /* transition: background-color 0.3s, color 0.3s; */
+" onmouseover="this.style.backgroundColor='#b83dff'; this.style.color='black'" 
+onmouseout="this.style.backgroundColor='#b83dff'; this.style.color='white'">
+    Go Back
+</a>
+    </div>
+</body>
+</html>
+
