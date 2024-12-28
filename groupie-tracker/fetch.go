@@ -231,6 +231,7 @@ func FetchArtistData(id int) (Artist, []string, []string, map[string][]string, e
 			for _, loc := range location.Locations {
 				cleanLoc := strings.ReplaceAll(loc, "_", " ")
 				cleanLoc = strings.ReplaceAll(cleanLoc, "-", " ")
+				cleanLoc = ToUpper(cleanLoc)
 				associatedLocations = append(associatedLocations, cleanLoc)
 			}
 			locationCount = LocationCount(associatedLocations)
@@ -253,6 +254,7 @@ func FetchArtistData(id int) (Artist, []string, []string, map[string][]string, e
 			for loc, relDates := range relation.DatesLocations {
 				cleanLoc := strings.ReplaceAll(loc, "_", " ")
 				cleanLoc = strings.ReplaceAll(cleanLoc, "-", " ")
+				cleanLoc = ToUpper(cleanLoc)
 				cleanRelDates := []string{}
 				for _, d := range relDates {
 					cleanDate := strings.ReplaceAll(d, "*", "")
